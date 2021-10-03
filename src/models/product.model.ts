@@ -10,7 +10,7 @@ export interface ProductDocument extends mongoose.Document {
   description: string;
   price: number;
   image: string;
-  createAt: Date;
+  createdAt: Date;
   updatedAt: Date;
 }
 
