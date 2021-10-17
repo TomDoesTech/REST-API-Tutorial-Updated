@@ -1,0 +1,85 @@
+diff --git a/src/models/product.model.ts b/src/models/product.model.ts
+index 4b83d65..03d548f 100644
+--- a/src/models/product.model.ts
++++ b/src/models/product.model.ts
+@@ -4,12 +4,15 @@ import { UserDocument } from "./user.model";
+ 
+ const nanoid = customAlphabet("abcdefghijklmnopqrstuvwxyz0123456789", 10);
+ 
+-export interface ProductDocument extends mongoose.Document {
++export interface ProductInput {
+   user: UserDocument["_id"];
+   title: string;
+   description: string;
+   price: number;
+   image: string;
++}
++
++export interface ProductDocument extends ProductInput, mongoose.Document {
+   createdAt: Date;
+   updatedAt: Date;
+ }
+diff --git a/src/models/user.model.ts b/src/models/user.model.ts
+index ce6ea8f..37dfbc0 100644
+--- a/src/models/user.model.ts
++++ b/src/models/user.model.ts
+@@ -2,10 +2,13 @@ import mongoose from "mongoose";
+ import bcrypt from "bcrypt";
+ import config from "config";
+ 
+-export interface UserDocument extends mongoose.Document {
++export interface UserInput {
+   email: string;
+   name: string;
+   password: string;
++}
++
++export interface UserDocument extends UserInput, mongoose.Document {
+   createdAt: Date;
+   updatedAt: Date;
+   comparePassword(candidatePassword: string): Promise<Boolean>;
+diff --git a/src/service/product.service.ts b/src/service/product.service.ts
+index 2dad4ca..b382b4b 100644
+--- a/src/service/product.service.ts
++++ b/src/service/product.service.ts
+@@ -1,14 +1,10 @@
+-import {
+-  DocumentDefinition,
+-  FilterQuery,
+-  QueryOptions,
+-  UpdateQuery,
+-} from "mongoose";
+-import ProductModel, { ProductDocument } from "../models/product.model";
++import { FilterQuery, QueryOptions, UpdateQuery } from "mongoose";
++import ProductModel, {
++  ProductDocument,
++  ProductInput,
++} from "../models/product.model";
+ 
+-export async function createProduct(
+-  input: DocumentDefinition<Omit<ProductDocument, "createdAt" | "updatedAt">>
+-) {
++export async function createProduct(input: ProductInput) {
+   return ProductModel.create(input);
+ }
+ 
+diff --git a/src/service/user.service.ts b/src/service/user.service.ts
+index 7dee694..af904d0 100644
+--- a/src/service/user.service.ts
++++ b/src/service/user.service.ts
+@@ -1,12 +1,8 @@
+-import { DocumentDefinition, FilterQuery } from "mongoose";
++import { FilterQuery } from "mongoose";
+ import { omit } from "lodash";
+-import UserModel, { UserDocument } from "../models/user.model";
++import UserModel, { UserDocument, UserInput } from "../models/user.model";
+ 
+-export async function createUser(
+-  input: DocumentDefinition<
+-    Omit<UserDocument, "createdAt" | "updatedAt" | "comparePassword">
+-  >
+-) {
++export async function createUser(input: UserInput) {
+   try {
+     const user = await UserModel.create(input);
+ 
