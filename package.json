@@ -20,6 +20,8 @@
     "nanoid": "^3.1.30",
     "pino": "^7.0.2",
     "pino-pretty": "^7.1.0",
+    "prom-client": "^14.0.0",
+    "response-time": "^2.3.2",
     "zod": "^3.9.8"
   },
   "devDependencies": {
@@ -33,6 +35,7 @@
     "@types/nanoid": "^3.0.0",
     "@types/node": "^16.11.1",
     "@types/pino": "^6.3.11",
+    "@types/response-time": "^2.3.5",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.4.4"
   }

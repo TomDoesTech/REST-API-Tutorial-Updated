@@ -58,7 +58,7 @@
     "@types/qs" "*"
     "@types/range-parser" "*"
 
-"@types/express@^4.17.13":
+"@types/express@*", "@types/express@^4.17.13":
   version "4.17.13"
   resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.13.tgz#a76e2995728999bab51a33fabce1d705a3709034"
   integrity sha512-6bSZTPaTIACxn48l50SR+axgrqm6qXFIxrdAKaG6PaJk3+zuUr35hBlgT7vOmJcum+OEaIBLtHV/qloEAFITeA==
@@ -135,6 +135,14 @@
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.4.tgz#cd667bcfdd025213aafb7ca5915a932590acdcdc"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
+
+"@types/response-time@^2.3.5":
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/@types/response-time/-/response-time-2.3.5.tgz#e85ff348caefd0f8d3e8902424c681a59aafc31e"
+  integrity sha512-4ANzp+I3K7sztFFAGPALWBvSl4ayaDSKzI2Bok+WNz+en2eB2Pvk6VCjR47PBXBWOkEg2r4uWpZOlXA5DNINOQ==
+  dependencies:
+    "@types/express" "*"
+    "@types/node" "*"
 
 "@types/serve-static@*":
   version "1.13.10"
@@ -272,6 +280,11 @@ binary-extensions@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
+
+bintrees@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/bintrees/-/bintrees-1.0.1.tgz#0e655c9b9c2435eaab68bf4027226d2b55a34524"
+  integrity sha1-DmVcm5wkNeqraL9AJyJtK1WjRSQ=
 
 body-parser@1.19.0:
   version "1.19.0"
@@ -488,7 +501,7 @@ denque@^2.0.1:
   resolved "https://registry.yarnpkg.com/denque/-/denque-2.0.1.tgz#bcef4c1b80dc32efe97515744f21a4229ab8934a"
   integrity sha512-tfiWc6BQLXNLpNiR5iGd0Ocu3P3VpxfzFiqubLgMfhfOw9WyvgJBd46CClNn9k3qfbjvT//0cf7AlYRX/OslMQ==
 
-depd@~1.1.2:
+depd@~1.1.0, depd@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
@@ -1167,6 +1180,11 @@ on-finished@~2.3.0:
   dependencies:
     ee-first "1.1.1"
 
+on-headers@~1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/on-headers/-/on-headers-1.0.2.tgz#772b0ae6aaa525c399e489adfad90c403eb3c28f"
+  integrity sha512-pZAE+FJLoyITytdqK0U5s+FIpjN0JP3OzFi/u8Rx+EV5/W+JTWGXG8xFzevE7AjBfDqHv/8vL8qQsIhHnqRkrA==
+
 once@^1.3.0, once@^1.3.1, once@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
@@ -1250,6 +1268,13 @@ process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
+
+prom-client@^14.0.0:
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/prom-client/-/prom-client-14.0.0.tgz#7af5a0f8f544743f0dee4447c06ac9bb0d052719"
+  integrity sha512-etPa4SMO4j6qTn2uaSZy7+uahGK0kXUZwO7WhoDpTf3yZ837I3jqUDYmG6N0caxuU6cyqrg0xmOxh+yneczvyA==
+  dependencies:
+    tdigest "^0.1.1"
 
 proxy-addr@~2.0.5:
   version "2.0.7"
@@ -1338,6 +1363,14 @@ resolve@^1.0.0:
   dependencies:
     is-core-module "^2.2.0"
     path-parse "^1.0.6"
+
+response-time@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/response-time/-/response-time-2.3.2.tgz#ffa71bab952d62f7c1d49b7434355fbc68dffc5a"
+  integrity sha1-/6cbq5UtYvfB1Jt0NDVfvGjf/Fo=
+  dependencies:
+    depd "~1.1.0"
+    on-headers "~1.0.1"
 
 rfdc@^1.3.0:
   version "1.3.0"
@@ -1579,6 +1612,13 @@ tar@^6.1.0:
     minizlib "^2.1.1"
     mkdirp "^1.0.3"
     yallist "^4.0.0"
+
+tdigest@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/tdigest/-/tdigest-0.1.1.tgz#2e3cb2c39ea449e55d1e6cd91117accca4588021"
+  integrity sha1-Ljyyw56kSeVdHmzZEReszKRYgCE=
+  dependencies:
+    bintrees "1.0.1"
 
 thread-stream@^0.11.1:
   version "0.11.1"
