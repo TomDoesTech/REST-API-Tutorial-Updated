@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e85c579e-200a-40b9-9ce3-26a6e6f85ebe",
+		"_postman_id": "d3a34203-6dac-480e-8aac-0dce44241f83",
 		"name": "REST API Tutorial",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -43,6 +43,7 @@
 							"script": {
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);",
+									"console.log(jsonData)",
 									"postman.setEnvironmentVariable(\"accessToken\", jsonData.accessToken);",
 									"postman.setEnvironmentVariable(\"refreshToken\", jsonData.refreshToken);"
 								],
@@ -405,6 +406,30 @@
 								"api",
 								"products",
 								"{{productId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Metrics",
+			"item": [
+				{
+					"name": "Get metrics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9100/metrics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9100",
+							"path": [
+								"metrics"
 							]
 						}
 					},
