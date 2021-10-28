@@ -3,6 +3,7 @@ import {
   createProductHandler,
   getProductHandler,
   updateProductHandler,
+  deleteProductHandler,
 } from "./controller/product.controller";
 import {
   createUserSessionHandler,
@@ -57,7 +58,7 @@ function routes(app: Express) {
   app.delete(
     "/api/products/:productId",
     [requireUser, validateResource(deleteProductSchema)],
-    getProductHandler
+    deleteProductHandler
   );
 }
 
