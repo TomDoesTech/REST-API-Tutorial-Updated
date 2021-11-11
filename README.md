@@ -4,6 +4,7 @@ Note: This repository includes the [postman collection for the finished API](pos
 
 ## Common issues
 * I'm getting a JWT malformed error: https://youtu.be/FzKrfwplips
+* Managing environment variables: https://youtu.be/gfyQzeBlLTI
 
 ## Who is this tutorial for?
 * Junior to mid-level developers
