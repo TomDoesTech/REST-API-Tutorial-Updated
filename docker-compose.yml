@@ -6,15 +6,13 @@ services:
     environment:
       - NODE_ENV=production
     build:
-        context: ./
-    ports:
-      - 1337:1337      
+        context: ./ 
 
   caddy:
     image: caddy/caddy:2.2.1-alpine
     container_name: caddy-service
     restart: unless-stopped
-    port:
+    ports:
       - "80:80"
       - "443:443"
     volumes:
