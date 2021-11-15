@@ -1,4 +1,6 @@
 import express, { Request, Response } from "express";
+import dotenv from "dotenv";
+dotenv.config();
 import config from "config";
 import responseTime from "response-time";
 import connect from "./utils/connect";
@@ -9,6 +11,10 @@ import { restResponseTimeHistogram, startMetricsServer } from "./utils/metrics";
 import swaggerDocs from "./utils/swagger";
 
 const port = config.get<number>("port");
+
+console.log(config.get("privateKey"));
+
+console.log("useDatabase", typeof config.get("useDatabase"));
 
 const app = express();
 

@@ -59,14 +59,23 @@ Note: This repository includes the [postman collection for the finished API](pos
    5. Delete product
 
 
-
-
 ## Data flow
 ![](./diagrams/data-flow.png)
 
 
 ## Access & refresh token flow
 ![](./diagrams/refresh-token-flow.png)
+
+
+# Deployment
+
+## What will we use
+* Docker (image)
+* docker-compose (container)
+* Caddy - Web server
+* DigitalOcean
+
+Note: You will need Docker installed locally if you want to test your Docker configutation
 
 ## Let's keep in touch
 - [Subscribe on YouTube](https://www.youtube.com/TomDoesTech)

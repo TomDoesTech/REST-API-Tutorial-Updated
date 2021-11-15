@@ -1,0 +1,28 @@
+version: '3.7'
+services:
+  rest-api:
+    container_name: rest-api
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    build:
+        context: ./
+    ports:
+      - 1337:1337      
+
+  caddy:
+    image: caddy/caddy:2.2.1-alpine
+    container_name: caddy-service
+    restart: unless-stopped
+    port:
+      - "80:80"
+      - "443:443"
+    volumes:
+    - $PWD/Caddyfile:/etc/caddy/Caddyfile
+    - $PWD/site:/srv
+    - caddy_data:/data
+    - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:
