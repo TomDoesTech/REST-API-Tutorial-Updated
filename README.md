@@ -2,6 +2,10 @@
 
 Note: This repository includes the [postman collection for the finished API](postman_collection.json)
 
+## Common issues
+* I'm getting a JWT malformed error: https://youtu.be/FzKrfwplips
+* Managing environment variables: https://youtu.be/gfyQzeBlLTI
+
 ## Who is this tutorial for?
 * Junior to mid-level developers
 * Anyone interested in building REST APIs with TypeScript
