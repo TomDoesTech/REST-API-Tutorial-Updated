@@ -29,7 +29,7 @@ export async function validatePassword({
 
   if (!isValid) return false;
 
-  return omit(user.toJSON(), "password");
+  return omit(user.toJSON({ flattenMaps: false }), "password");
 }
 
 export async function findUser(query: FilterQuery<UserDocument>) {
