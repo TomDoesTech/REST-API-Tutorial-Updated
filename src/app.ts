@@ -12,10 +12,6 @@ import swaggerDocs from "./utils/swagger";
 
 const port = config.get<number>("port");
 
-console.log(config.get("privateKey"));
-
-console.log("useDatabase", typeof config.get("useDatabase"));
-
 const app = express();
 
 app.use(express.json());
