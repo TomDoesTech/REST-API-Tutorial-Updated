@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import client from "prom-client";
 import log from "./logger";
 
@@ -21,7 +21,7 @@ export function startMetricsServer() {
 
   collectDefaultMetrics();
 
-  app.get("/metrics", async (req, res) => {
+  app.get("/metrics", async (req: Request, res: Response) => {
     res.set("Content-Type", client.register.contentType);
 
     return res.send(await client.register.metrics());
