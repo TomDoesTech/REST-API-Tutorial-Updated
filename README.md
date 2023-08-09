@@ -6,8 +6,11 @@ Note 2: Make sure you add .env to your .gitignore before pushing any changes to 
 
 #### Generate new keys: https://travistidwell.com/jsencrypt/demo/
 
-#### Base64 encode the keys: https://www.base64encode.org/
+#### Base64 encode the keys: https://base64.guru/converter/encode/text
 
+<!---
+The previous website no longer works or is difficult to use for some unknown reason. The updated one works with ease. Thank you.
+-->
 
 
 ## Common issues
